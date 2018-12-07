@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+</head>
+
+<body class="bg-secondary">
+    <nav class="bg-dark">
+        <h1 class="text-center text-light display-2">Rock Paper Sissors</h1>
+    </nav>
+    <br>
+    <main class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Blue Player Score</h2>
+                        <h2 class="card-text text-center">0</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card bg-danger">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Red Player Score</h2>
+                        <h2 class="card-text text-center">0</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-4">
+                <div class="card bg-primary">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Blue Player</h2>
+                        <h2 class="card-text text-center">0</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card bg-warning">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Game Status</h2>
+                        <h2 class="card-text text-center">0</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card bg-danger">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Red Player</h2>
+                        <h2 class="card-text text-center">0</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-4">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <h2 class="card-title text-center"><i class="far fa-5x fa-hand-rock"></i></h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <h2 class="card-title text-center"><i class="far fa-5x fa-hand-paper"></i></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <h2 class="card-title text-center"><i class="far fa-5x fa-hand-scissors"></i></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBWtr3WOgo_kTWrdsU8If-W0NX1v8j4i_4",
+            authDomain: "rps-multiplayer-581de.firebaseapp.com",
+            databaseURL: "https://rps-multiplayer-581de.firebaseio.com",
+            projectId: "rps-multiplayer-581de",
+            storageBucket: "",
+            messagingSenderId: "575698856442"
+        };
+        firebase.initializeApp(config);
+
+        var gameplaying = false;
+
+        function freshGame() {
+            $("main").empty()
+            startgamehtml = $("<div class='row'><div class='col-6'><div class='card bg-primary'><div class='card-body'><h2 class='card-title text-center'>Blue Player Score</h2><h2 class='card-text text-center'>0</h2></div></div></div><div class='col-6'><div class='card bg-danger'><div class='card-body'><h2 class='card-title text-center'>Red Player Score</h2><h2 class='card-text text-center'>0</h2></div></div></div></div>")
+            addnewrow = $("<div class='row'></div>")
+            $("main").append(startgamehtml)
+
+        }
+        freshGame()
+
+
+    </script>
+
+
+</body>
+
+</html>
